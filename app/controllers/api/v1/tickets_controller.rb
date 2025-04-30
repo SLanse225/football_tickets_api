@@ -1,6 +1,6 @@
 module Api
   module V1
-    class TicketsController < ApplicationController
+    class TicketsController < APIController
       before_action :set_match
       before_action :set_ticket, only: %i[ show update destroy ]
 

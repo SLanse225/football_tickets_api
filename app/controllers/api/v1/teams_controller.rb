@@ -1,6 +1,6 @@
 module Api
   module V1
-    class TeamsController < ApplicationController
+    class TeamsController < APIController
       before_action :set_team, only: %i[ show update destroy ]
 
       # GET /teams

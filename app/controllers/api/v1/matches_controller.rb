@@ -1,6 +1,6 @@
 module Api
   module V1
-    class MatchesController < ApplicationController
+    class MatchesController < APIController
       before_action :set_match, only: %i[ show update destroy ]
 
       # GET /matches
@@ -20,7 +20,7 @@ module Api
         @match = Match.new(match_params)
 
         if @match.save
-          render json: @match, status: :created, location: @match
+          render json: @match, status: :created, location: api_v1_match_url(@match)
         else
           render json: @match.errors, status: :unprocessable_entity
         end
